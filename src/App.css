@@ -1,0 +1,39 @@
+.reset-default {
+  all: unset;
+}
+
+.underline-pos {
+  top: calc(100% - 2px);
+}
+
+.line-divider::before {
+  content: "";
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 1px;
+  height: 16px;
+  background-color: #e0e0e6;
+  position: absolute;
+}
+
+
+.swiper-image-slider .swiper-pagination-bullet {
+    width: 4px;
+    height: 4px;
+    transition: width 0.3s ease-in-out;
+}
+
+.swiper-image-slider .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  width: 16px;
+  height: 6px;
+  border-radius: 9999999999999px;
+  transform: translateY(1px);
+  background-color: #fff;
+}
+
+
+
+.navbar-boxShadow {
+  box-shadow: 0 1px 0 rgb(0 0 0 / 14%), 0 2px 0 rgb(0 0 0 / 5%);
+}

@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+    font-family: "IRANYekanRegular";
+    src: url("/public/fonts/IRANYekanRegular.ttf");
+}
+
+@font-face {
+    font-family: "IRANYekanThin";
+    src: url("/public/fonts/IRANYekanThin.ttf");
+}
+
+@font-face {
+    font-family: "IRANYekanLight";
+    src: url("/public/fonts/IRANYekanLight.ttf");
+}
+
+
+
+html {
+    font-family: "IRANYekanRegular";
+}
