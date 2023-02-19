@@ -16,6 +16,11 @@ module.exports = {
         800: "#23254e",
         900: "#080a38"
       },
+      fresh: {
+        300: "#9dc44d",
+        500: "#6bb927",
+        700: "#39ae00"
+      },
       primary: {
         700: "#ef394e",
         500: "#ef4056"
@@ -31,6 +36,9 @@ module.exports = {
     extend: {
       fontFamily: {
         IRANYekanRegular: ["IRANYekanRegular", "sans-serif"]
+      },
+      backgroundImage: {
+        'fresh-pattern': "url('/images/freshPattern.svg')",
       }
     },
   },
