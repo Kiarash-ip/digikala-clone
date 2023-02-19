@@ -37,3 +37,12 @@
 .navbar-boxShadow {
   box-shadow: 0 1px 0 rgb(0 0 0 / 14%), 0 2px 0 rgb(0 0 0 / 5%);
 }
+
+
+.grid-swiper-container .swiper-wrapper .swiper-slide:not(:last-child) {
+  border-right: 1px solid #e0e0e6;
+}
+
+.brand-item:not(:last-child) {
+  border-right: 1px solid #e0e0e6;
+}
