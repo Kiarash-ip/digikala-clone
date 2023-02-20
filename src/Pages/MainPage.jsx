@@ -9,6 +9,7 @@ import ServicesSection from "../Components/MainPageComponents/ServicesSection/Se
 import SuggestionSection from "../Components/MainPageComponents/SuggestionsSection/SuggestionSection";
 import DigikalaSuggestionsSection from "../Components/MainPageComponents/DigikalaSuggestionsSection/DigikalaSuggestionsSection";
 import PopularBrandSection from "../Components/MainPageComponents/PopularBrandsSection/PopularBrandSection";
+import FooterSection from "../Components/MainPageComponents/FooterSection/FooterSection";
 
 export default function MainPage() {
   return (
@@ -23,6 +24,7 @@ export default function MainPage() {
       <DiscountImageSection_2 />
       <DigikalaSuggestionsSection />
       <PopularBrandSection />
+      <FooterSection />
     </div>
   );
 }
