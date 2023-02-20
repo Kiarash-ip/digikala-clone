@@ -34,11 +34,13 @@ export default function Navbar() {
   }, [widths]);
 
   useEffect(() => {
-    setTimeout(() => {
+    let timeout = setTimeout(() => {
       setWidths(() => {
         return elementsRef.current.map((ref) => ref.current.clientWidth);
       });
     }, 500);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   useEffect(() => {

@@ -30,7 +30,8 @@ module.exports = {
         high_emphasis: "#3f4064"
       },
       button: {
-        black: "#080a38"
+        black: "#080a38",
+        disable: "#e0e0e6"
       }
     },
     extend: {
