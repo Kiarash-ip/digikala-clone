@@ -9,6 +9,8 @@ import {
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 import AppStoresItem from "./AppStoresItem";
+import FooterAccordionSection from "./FooterAccordionSection/FooterAccordionSection";
+import FooterBrands from "./FooterBrands/FooterBrands";
 
 const footerIcons = [
   {
@@ -290,8 +292,18 @@ export default function FooterSection() {
               </div>
             </div>
           </div>
+          <FooterAccordionSection />
+          <div
+            dir="rtl"
+            className="flex text-xs text-neutral-500 text-center items-center flex-col justify-between border-t border-neutral-100 py-8 leading-[2.17] font-[400]"
+          >
+            برای استفاده از مطالب دیجی‌کالا، داشتن «هدف غیرتجاری» و ذکر «منبع»
+            کافیست. تمام حقوق اين وب‌سايت نیز برای شرکت نوآوران فن آوازه
+            (فروشگاه آنلاین دیجی‌کالا) است.
+          </div>
         </div>
       </div>
+      <FooterBrands />
     </div>
   );
 }

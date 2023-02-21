@@ -46,3 +46,12 @@
 .brand-item:not(:last-child) {
   border-right: 1px solid #e0e0e6;
 }
+
+
+.footer-fade::before {
+  background: linear-gradient(180deg,hsla(0,0%,100%,0) 50%,#fff);
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}

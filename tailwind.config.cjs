@@ -31,7 +31,8 @@ module.exports = {
       },
       button: {
         black: "#080a38",
-        disable: "#e0e0e6"
+        disable: "#e0e0e6",
+        secondary: "#19bfd3"
       }
     },
     extend: {

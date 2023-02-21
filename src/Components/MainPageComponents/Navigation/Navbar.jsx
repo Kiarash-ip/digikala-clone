@@ -20,28 +20,15 @@ const navigationItems = [
 ];
 
 export default function Navbar() {
-  const [widths, setWidths] = useState([]);
+  const [widths, setWidths] = useState([
+    131.7, 90, 93.4, 136.5, 99.4, 79.6, 145.3,
+  ]);
   const [currentWidth, setCurrentWidth] = useState(0);
   const [currentItem, setCurrentItem] = useState({
     num: 0,
     rerenderer: new Date(),
   });
   const [left, setLeft] = useState(0);
-  const elementsRef = useRef(navigationItems.map(() => createRef()));
-
-  useEffect(() => {
-    console.log(widths);
-  }, [widths]);
-
-  useEffect(() => {
-    let timeout = setTimeout(() => {
-      setWidths(() => {
-        return elementsRef.current.map((ref) => ref.current.clientWidth);
-      });
-    }, 500);
-
-    return () => clearTimeout(timeout);
-  }, []);
 
   useEffect(() => {
     console.log(left);
@@ -66,7 +53,9 @@ export default function Navbar() {
           />
           <div className="h-[24px] w-[1px] bg-neutral-200 mx-3"></div>
           <button className="flex items-center text-button-black gap-2 border border-neutral-200 px-4 py-2 rounded-md">
-            <span className="text-xs">ورود | ثبت نام</span>
+            <span className="text-xs font-[700] leading-[2.17]">
+              ورود | ثبت نام
+            </span>
             <FontAwesomeIcon
               icon={faArrowRightToBracket}
               className="scale-x-[-1] text-button-black text-lg"
@@ -104,7 +93,7 @@ export default function Navbar() {
             className="flex items-center relative h-full"
             onMouseLeave={() => setCurrentWidth(0)}
           >
-            {navigationItems.map((item, i) => {
+            {/* {navigationItems.map((item, i) => {
               return (
                 <a
                   className="px-3 text-neutral-600 text-xs cursor-pointer"
@@ -116,61 +105,84 @@ export default function Navbar() {
                   {item.title}
                 </a>
               );
-            })}
-            {/* <div className="flex items-center relative line-divider">
-              <a
-                className="px-3 text-neutral-600 text-xs cursor-pointer"
-                ref={ref_1}
+            })} */}
+            <div className="flex items-center relative line-divider">
+              <div
+                className="h-full flex items-center px-3"
                 onMouseEnter={() => {
-                  setWidth({
-                    width: ref_1.current.getBoundingClientRect().width,
-                    num: 1,
-                  });
-                  console.log("ref1");
+                  setCurrentItem({ num: 0, rerenderer: new Date() });
                 }}
               >
-                در دیجی&zwnj;کالا بفروشید
-              </a>
-              <a
-                className="px-3 text-neutral-600 text-xs cursor-pointer"
-                ref={ref_2}
+                <a
+                  dir="rtl"
+                  className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]"
+                >
+                  در دیجی&zwnj;کالا بفروشید!
+                </a>
+              </div>
+              <div
+                className="h-full flex items-center px-3"
                 onMouseEnter={() => {
-                  setWidth({
-                    width: ref_1.current.getBoundingClientRect().width,
-                    num: 2,
-                  });
-                  console.log(ref_2.current.getBoundingClientRect());
+                  setCurrentItem({ num: 0, rerenderer: new Date() });
                 }}
               >
-                سوالی دارید؟
-              </a>
+                <a
+                  className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]"
+                  onMouseEnter={() => {
+                    setCurrentItem({ num: 1, rerenderer: new Date() });
+                  }}
+                >
+                  سوالی دارید؟
+                </a>
+              </div>
             </div>
             <div className="flex items-center relative line-divider">
-              <div className="px-3 text-neutral-600 text-xs" ref={ref_3}>
-                <a className="cursor-pointer">شگفت&zwnj;انگیز&zwnj;ها</a>
+              <div
+                className="h-full flex items-center px-3"
+                onMouseEnter={() => {
+                  setCurrentItem({ num: 2, rerenderer: new Date() });
+                }}
+              >
+                <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
+                  شگفت&zwnj;انگیز&zwnj;ها
+                </a>
               </div>
-              <a
-                className="px-3 text-neutral-600 text-xs cursor-pointer"
-                ref={ref_4}
+              <div
+                className="h-full flex items-center px-3"
+                onMouseEnter={() => {
+                  setCurrentItem({ num: 3, rerenderer: new Date() });
+                }}
               >
-                تخفیف&zwnj;ها و پیشنهاد&zwnj;ها
-              </a>
-              <a
-                className="px-3 text-neutral-600 text-xs cursor-pointer"
-                ref={ref_5}
+                <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
+                  تخفیف&zwnj;ها و پیشنهاد&zwnj;ها
+                </a>
+              </div>
+              <div
+                className="h-full flex items-center px-3"
+                onMouseEnter={() => {
+                  setCurrentItem({ num: 4, rerenderer: new Date() });
+                }}
               >
-                پر&zwnj;فروش&zwnj;ترین&zwnj;ها
-              </a>
-              <a
-                className="px-3 text-neutral-600 text-xs cursor-pointer"
-                ref={ref_6}
+                <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
+                  پر&zwnj;فروش&zwnj;ترین&zwnj;ها
+                </a>
+              </div>
+              <div
+                className="h-full flex items-center px-3"
+                onMouseEnter={() => {
+                  setCurrentItem({ num: 5, rerenderer: new Date() });
+                }}
               >
-                سوپرمارکت
-              </a>
+                <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
+                  سوپرمارکت
+                </a>
+              </div>
             </div>
             <div
               className="px-3 text-neutral-700 flex items-center gap-2"
-              ref={ref_7}
+              onMouseEnter={() => {
+                setCurrentItem({ num: 6, rerenderer: new Date() });
+              }}
             >
               <a className="text-sm cursor-pointer">
                 دسته&zwnj;بندی کالا&zwnj;ها
@@ -179,7 +191,7 @@ export default function Navbar() {
                 icon={faBars}
                 className="text-neutral-700 w-[20px w-[15px]"
               />
-            </div> */}
+            </div>
             <div
               style={{ width: currentWidth, left: left }}
               className={`h-[2px] bg-primary-700 absolute underline-pos transition-all transition-300`}
