@@ -32,7 +32,7 @@ const imageSlides = [
 export default function ImageSliderSection() {
   const [swiper, setSwiper] = useState(null);
   return (
-    <div className="w-full">
+    <div className="w-full pt-[112px]">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: false }}

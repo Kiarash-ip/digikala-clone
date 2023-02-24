@@ -43,6 +43,7 @@ module.exports = {
         'fresh-pattern': "url('/images/freshPattern.svg')",
       }
     },
+    
   },
   plugins: [],
 }
