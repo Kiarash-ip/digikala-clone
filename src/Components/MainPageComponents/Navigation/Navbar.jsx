@@ -97,7 +97,7 @@ export default function Navbar() {
             </div>
           </div>
           <div
-            className="flex items-center justify-between h-[40px] transition-all transition-200 ease-in-out"
+            className="flex items-center justify-between h-[40px] transition-all transition-200 ease-in-out px-4"
             style={{
               height: shrink ? "0" : "40px",
               overflow: shrink ? "hidden" : "visible",
