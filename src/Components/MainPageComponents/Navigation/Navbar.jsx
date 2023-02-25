@@ -22,23 +22,26 @@ export default function Navbar() {
   const [shrink, setShrink] = useState(false);
   const previousScrollPos = useRef(0);
   const currentScrollPos = useRef(0);
+  const navbarRef = useRef();
 
   useEffect(() => {
     function scrollHandler(e) {
       // console.log(window.pageYOffset);
       previousScrollPos.current = currentScrollPos.current;
-      currentScrollPos.current = window.pageYOffset;
+      currentScrollPos.current = window.scrollY;
       let sub = currentScrollPos.current - previousScrollPos.current;
-      if (sub > 0 && !shrink) {
+      if (sub > 0 && !menuOpen) {
+        console.log("shrinked");
         setShrink(true);
-      } else {
+      } else if (sub < 0 && !menuOpen) {
+        console.log("unshrinked");
         setShrink(false);
       }
     }
 
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
-  }, []);
+  }, [menuOpen]);
 
   useEffect(() => {
     let left = 0;
@@ -57,6 +60,7 @@ export default function Navbar() {
           height: shrink ? "72px" : "112px",
           paddingRight: menuOpen ? "10px" : "0",
         }}
+        ref={navbarRef}
       >
         <div className="w-full max-w-[1644px] mx-auto flex flex-col relative ">
           <div className="w-full flex items-center px-4 py-3">

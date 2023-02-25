@@ -82,3 +82,8 @@
 .lock-body-scroll {
   overflow: hidden !important;
 }
+
+
+.imageSlider-container:hover .navigation-btns {
+  opacity: 1;
+}

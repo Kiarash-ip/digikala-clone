@@ -53,6 +53,7 @@ export default function PopularBrandSection() {
           <Swiper
             spaceBetween={0}
             slidesPerView={slides}
+            dir="rtl"
             onSwiper={(swiper) => {
               setSwiper(swiper);
             }}

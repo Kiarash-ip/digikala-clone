@@ -1,6 +1,11 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Autoplay } from "swiper";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faChevronLeft,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
@@ -32,7 +37,7 @@ const imageSlides = [
 export default function ImageSliderSection() {
   const [swiper, setSwiper] = useState(null);
   return (
-    <div className="w-full pt-[112px]">
+    <div className="w-full pt-[112px] relative imageSlider-container">
       <Swiper
         modules={[Pagination, Autoplay]}
         pagination={{ clickable: false }}
@@ -55,6 +60,28 @@ export default function ImageSliderSection() {
           );
         })}
       </Swiper>
+      <div className="absolute bottom-[42px] right-[0] flex items-center text-neutral-700 z-20 opacity-0 transition-all transition-100 navigation-btns">
+        <button
+          className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center mr-1 border border-neutral-300"
+          onClick={() => {
+            swiper.slidePrev();
+          }}
+        >
+          <div className="flex items-center justify-center w-[24px] h-[24px] text-icon-high_emphasis">
+            <FontAwesomeIcon icon={faChevronLeft} className="text-xs" />
+          </div>
+        </button>
+        <button
+          className="w-[40px] h-[40px] bg-white rounded-full flex items-center justify-center mr-10 ml-1 border border-neutral-300"
+          onClick={() => {
+            swiper.slideNext();
+          }}
+        >
+          <div className="flex items-center justify-center w-[24px] h-[24px] text-icon-high_emphasis">
+            <FontAwesomeIcon icon={faChevronRight} className="text-xs" />
+          </div>
+        </button>
+      </div>
     </div>
   );
 }

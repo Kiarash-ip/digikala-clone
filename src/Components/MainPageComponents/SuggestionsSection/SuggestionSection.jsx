@@ -5,8 +5,6 @@ import {
   faChevronLeft,
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
-import SwiperCore, { Pagination, Autoplay, Parallax } from "swiper";
-
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 // import "swiper/components/pagination/pagination.min.css";
@@ -73,7 +71,6 @@ const products = [
     src: "/images/camera.webp",
   },
 ];
-SwiperCore.use([Autoplay]);
 
 export default function SuggestionSection() {
   const [swiper, setSwiper] = useState(null);
@@ -85,6 +82,10 @@ export default function SuggestionSection() {
   //   useEffect(() => {
   //     swiper?.isNext();
   //   });
+
+  // useEffect(() => {
+  //   swiper?.changeDirection("rtl");
+  // }, [swiper]);
 
   useEffect(() => {
     function resizeHandler() {
@@ -112,12 +113,11 @@ export default function SuggestionSection() {
         className="w-full max-w-[1336px] relative mx-auto bg-gradient-to-t from-primary-500 to-primary-700 lg:rounded-2xl mt-6 py-5 px-0.5 flex items-center"
       >
         <Swiper
-          modules={[Autoplay]}
           spaceBetween={2}
+          dir="rtl"
           slidesPerView={slides}
           onReachEnd={() => setIsEnd(true)}
           onSlideChange={(swiper) => {
-            console.log(swiper);
             if (!swiper.isEnd) {
               setIsEnd(false);
             }
@@ -127,25 +127,11 @@ export default function SuggestionSection() {
               setIsBeginning(false);
             }
           }}
-          autoplay={{
-            delay: 0,
-            reverseDirection: true,
-          }}
           onSwiper={(swiper) => {
             setSwiper(swiper);
           }}
           className="w-full"
         >
-          {products.map((p) => (
-            <SwiperSlide key={p.id}>
-              <ProductCard
-                src={p.src}
-                old_price={p.old_price}
-                new_price={p.new_price}
-                discount={p.discount}
-              />
-            </SwiperSlide>
-          ))}
           <SwiperSlide>
             <div className="flex flex-col items-center">
               <div className="w-[92px] h-[77px]">
@@ -169,10 +155,20 @@ export default function SuggestionSection() {
               </a>
             </div>
           </SwiperSlide>
+          {products.map((p) => (
+            <SwiperSlide key={p.id}>
+              <ProductCard
+                src={p.src}
+                old_price={p.old_price}
+                new_price={p.new_price}
+                discount={p.discount}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
         <button
-          onClick={() => swiper.slidePrev()}
-          style={{ display: `${isBeginning ? "none" : "inline-block"}` }}
+          onClick={() => swiper.slideNext()}
+          style={{ display: `${isEnd ? "none" : "inline-block"}` }}
           className="absolute t-[50%] left-[16px] border border-neutral-200 z-20 p-2 bg-white rounded-full"
         >
           <div className="w-[24px] h-[24px]">
@@ -183,8 +179,8 @@ export default function SuggestionSection() {
           </div>
         </button>
         <button
-          onClick={() => swiper.slideNext()}
-          style={{ display: `${isEnd ? "none" : "inline-block"}` }}
+          onClick={() => swiper.slidePrev()}
+          style={{ display: `${isBeginning ? "none" : "inline-block"}` }}
           className="absolute t-[50%] right-[16px] border border-neutral-200 z-20 p-2 bg-white rounded-full"
         >
           <div className="w-[24px] h-[24px]">

@@ -86,6 +86,7 @@ export default function DigikalaSuggestionsSection() {
         >
           <Swiper
             spaceBetween={0}
+            dir="rtl"
             slidesPerView={slides}
             onSwiper={(swiper) => {
               setSwiper(swiper);
