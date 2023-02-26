@@ -27,7 +27,8 @@ module.exports = {
       },
       icon: {
         low_emphasis: "#9e9fb1",
-        high_emphasis: "#3f4064"
+        high_emphasis: "#3f4064",
+        warning: "#f9a825"
       },
       button: {
         black: "#080a38",
