@@ -62,7 +62,7 @@ export default function Navbar() {
     <header
       className="lg:fixed relative top-0 left-0 right-0 w-full navbar-boxShadow flex flex-col z-30 transition-height pt-3 pb-1 px-4 lg:p-0 relative border-b lg:border-0 border-neutral-100 bg-white"
       style={{
-        ...(window.innerWidth > 1024 && {
+        ...(width > 1024 && {
           height: shrink ? "72px" : "112px",
           paddingRight: menuOpen ? "10px" : "0",
         }),

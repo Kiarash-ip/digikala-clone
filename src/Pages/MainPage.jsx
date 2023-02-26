@@ -11,14 +11,12 @@ import DigikalaSuggestionsSection from "../Components/MainPageComponents/Digikal
 import PopularBrandSection from "../Components/MainPageComponents/PopularBrandsSection/PopularBrandSection";
 import FooterSection from "../Components/MainPageComponents/FooterSection/FooterSection";
 import useResize from "../customHooks/useResize";
-import NavbarMobile from "../Components/MainPageComponents/Navigation/NavbarMobile";
 
 export default function MainPage() {
   const { width } = useResize();
 
   return (
     <div>
-      {/* {width < 1024 ? <NavbarMobile /> : } */}
       <Navbar />
       <ImageSliderSection />
       <ServicesSection />
