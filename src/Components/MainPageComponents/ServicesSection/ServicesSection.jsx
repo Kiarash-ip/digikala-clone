@@ -50,17 +50,23 @@ export default function ServicesSection() {
             ></div>
           ))}
         </button>
-        <span className="text-xs text-neutral-700">بیشتر</span>
+        <span className="text-xs font-[400] leading-[2.17] text-neutral-700 mt-1">
+          بیشتر
+        </span>
       </div>
       {servicesData.map((item) => {
         return (
           <a
             key={item.id}
             href="#"
-            className="flex flex-col items-center gap-2"
+            className="flex flex-col items-center user-select-none lg:w-[auto] my-2 lg:my-0"
           >
-            <img src={item.src} className="w-[52px] h-[52px]" />
-            <span className="text-xs text-neutral-700">{item.title}</span>
+            <div className="w-[52px] h-[52px]">
+              <img src={item.src} className="w-full h-full object-contain" />
+            </div>
+            <span className="text-xs font-[400] leading-[2.17] text-neutral-700 mt-1">
+              {item.title}
+            </span>
           </a>
         );
       })}

@@ -87,3 +87,11 @@
 .imageSlider-container:hover .navigation-btns {
   opacity: 1;
 }
+
+/* text styles */
+
+.text-caption-strong {
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 2.17;
+}

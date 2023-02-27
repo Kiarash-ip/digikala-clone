@@ -133,36 +133,43 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        {/* <DesktopNav
-          currentWidth={currentWidth}
-          setCurrentWidth={setCurrentWidth}
-          shrink={shrink}
-          left={left}
-          setCurrentItem={setCurrentItem}
-          menuOpen={menuOpen}
-          setMenuOpen={setMenuOpen}
-        /> */}
         <nav
-          className="hidden lg:flex items-center justify-between h-[40px] transition-all transition-200 ease-in-out px-4"
+          className="lg:flex items-center justify-between h-[40px] transition-all transition-200 ease-in-out lg:px-4 mt-2 pt-2 lg:pt-0 lg:mt-0 border-t lg:border-0 border-neutral-100"
           style={{
             height: shrink ? "0" : "40px",
             overflow: shrink ? "hidden" : "visible",
           }}
         >
-          <div className="flex items-center gap-2">
-            <span className="text-neutral-700 text-xs">
+          <div className="flex pb-1 items-center text-neutral-700 pointer">
+            <div className="lg:hidden flex mr-auto">
+              <FontAwesomeIcon
+                icon={faChevronLeft}
+                className="text-icon-high_emphasis text-xs"
+              />
+            </div>
+            <div className="text-xs font-[400] leading-[2.17] text-neutral-700">
               لطفا شهر خود را انتخاب کنید
-            </span>
-            <FontAwesomeIcon
-              icon={faLocationDot}
-              className="w-[20px] text-low_emphasis"
-            />
+            </div>
+            <div className="flex ml-2">
+              <FontAwesomeIcon
+                icon={faLocationDot}
+                className="lg:text-icon-high_emphasis text-icon-warning"
+              />
+            </div>
           </div>
           <div
-            className="flex items-center relative h-full"
+            className="lg:inline-block hidden relative top-0 right-0 flex items-center h-full bg-white"
             onMouseLeave={() => setCurrentWidth(0)}
           >
-            <div className="flex items-center relative line-divider h-full">
+            <a className="lg:hidden self-stretch py-5 flex justify-end items-center border-b border-neutral-100 mb-1 mx-5 order-1">
+              <div className="h-[24px]">
+                <img
+                  src="/images/digi.svg"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+            </a>
+            <div className="flex items-end relative line-divider h-full ">
               <div
                 className="h-full flex items-center px-3"
                 onMouseEnter={() => {
@@ -173,7 +180,7 @@ export default function Navbar() {
                   dir="rtl"
                   className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]"
                 >
-                  در دیجی&zwnj;کالا بفروشید!
+                  در دیجی‌کالا بفروشید!
                 </a>
               </div>
               <div
@@ -192,7 +199,7 @@ export default function Navbar() {
                 </a>
               </div>
             </div>
-            <div className="flex items-center relative line-divider h-full">
+            <div className="flex items-end relative line-divider h-full ">
               <div
                 className="h-full flex items-center px-3"
                 onMouseEnter={() => {
@@ -200,7 +207,7 @@ export default function Navbar() {
                 }}
               >
                 <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
-                  شگفت&zwnj;انگیز&zwnj;ها
+                  شگفت‌انگیزها
                 </a>
               </div>
               <div
@@ -210,7 +217,7 @@ export default function Navbar() {
                 }}
               >
                 <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
-                  تخفیف&zwnj;ها و پیشنهاد&zwnj;ها
+                  تخفیف‌ها و پیشنهادها
                 </a>
               </div>
               <div
@@ -220,7 +227,7 @@ export default function Navbar() {
                 }}
               >
                 <a className="text-neutral-600 text-xs cursor-pointer text-center font-[400] leading-[2.17]">
-                  پر&zwnj;فروش&zwnj;ترین&zwnj;ها
+                  پرفروش‌ترین‌ها
                 </a>
               </div>
               <div
@@ -235,7 +242,7 @@ export default function Navbar() {
               </div>
             </div>
             <div
-              className="navbar-category px-3 text-neutral-700 flex items-center gap-2 h-full cursor-pointer"
+              className="navbar-category px-3 text-neutral-700 flex justify-center items-center gap-2 h-full cursor-pointer "
               onMouseEnter={() => {
                 setCurrentItem({ num: 6, rerenderer: new Date() });
                 setMenuOpen(true);
@@ -246,7 +253,7 @@ export default function Navbar() {
                 document.body.classList.remove("lock-body-scroll");
               }}
             >
-              <a className="text-sm">دسته&zwnj;بندی کالا&zwnj;ها</a>
+              <a className="text-sm">دسته‌بندی کالاها</a>
               <FontAwesomeIcon
                 icon={faBars}
                 className="text-neutral-700 w-[20px] w-[15px]"
@@ -259,23 +266,6 @@ export default function Navbar() {
             ></div>
           </div>
         </nav>
-        <div className="lg:hidden flex pb-1 items-center text-neutral-700 pointer mt-2 pt-2 border-t border-neutral-100">
-          <div className="flex mr-auto">
-            <FontAwesomeIcon
-              icon={faChevronLeft}
-              className="text-icon-high_emphasis text-xs"
-            />
-          </div>
-          <div className="text-xs font-[400] leading-[2.17] text-neutral-700">
-            لطفا شهر خود را انتخاب کنید
-          </div>
-          <div className="flex ml-2">
-            <FontAwesomeIcon
-              icon={faLocationDot}
-              className="text-icon-warning"
-            />
-          </div>
-        </div>
       </div>
       <div
         className="absolute w-screen h-screen bg-neutral-900 opacity-75 z-20 top-[100%]"
