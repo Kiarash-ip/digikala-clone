@@ -30,8 +30,7 @@ export default function PopularBrandSection() {
     function resizeHandler() {
       console.log(window.innerWidth);
       if (window.innerWidth < 1024) {
-        setSlides(window.innerWidth / 130);
-        console.log(window.innerWidth / 154);
+        setSlides(window.innerWidth / 103);
       } else {
         setSlides(() => {
           return swiperContainerRef.current.getBoundingClientRect().width / 142;
@@ -46,35 +45,37 @@ export default function PopularBrandSection() {
   }, []);
 
   return (
-    <div className="w-full mt-4 lg:mt-6 px-5 lg:px-4">
-      <div className="w-full max-w-[1336px] mx-auto border border-neutral-200 rounded-2xl py-6 flex flex-col items-center">
-        <p className="text-neutral-900 text-2xl">محبوب‌ترین برندها</p>
-        <div className="w-full mt-3" ref={swiperContainerRef}>
-          <Swiper
-            spaceBetween={0}
-            slidesPerView={slides}
-            dir="rtl"
-            onSwiper={(swiper) => {
-              setSwiper(swiper);
-            }}
-            className="w-full"
-          >
-            {brands.map((img) => {
-              return (
-                <SwiperSlide key={img.id} className="cursor-pointer brand-item">
-                  <a className="px-4 py-1 flex items-center justify-center ">
-                    <div className="w-[110px] h-[110px]">
-                      <img
-                        src={img.src}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </a>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
+    <div className="w-full py-6 bg-white lg:rounded-2xl lg:border-neutral-200 lg:border mt-4 lg:mt-6">
+      <div className="flex justify-center items-center">
+        <p className="text-neutral-900 font-[500] leading-[2.1] text-xl">
+          محبوب‌ترین برندها
+        </p>
+      </div>
+      <div className="w-full mt-3" ref={swiperContainerRef}>
+        <Swiper
+          spaceBetween={0}
+          slidesPerView={slides}
+          dir="rtl"
+          onSwiper={(swiper) => {
+            setSwiper(swiper);
+          }}
+          className="w-full"
+        >
+          {brands.map((img) => {
+            return (
+              <SwiperSlide key={img.id} className="cursor-pointer brand-item">
+                <a className="px-4 py-1 flex items-center justify-center ">
+                  <div className="lg:w-[110px] lg:h-[110px] w-[70px] h-[70px]">
+                    <img
+                      src={img.src}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                </a>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </div>
   );

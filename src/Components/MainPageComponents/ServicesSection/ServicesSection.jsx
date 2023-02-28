@@ -40,7 +40,7 @@ const servicesData = [
 
 export default function ServicesSection() {
   return (
-    <div className="w-full max-w-[1336px] mx-auto lg:py-2 px-3 bg-white grid grid-cols-4 lg:flex lg:items-center flex-wrap justify-around mt-4 lg:mt-6">
+    <div className="lg:py-2 px-3 bg-white grid grid-cols-4 lg:flex lg:items-center flex-wrap justify-around mt-4 lg:mt-6">
       <div className="flex flex-col gap-2 justify-center items-center">
         <button className="w-[52px] h-[52px] rounded-full bg-neutral-100 flex items-center justify-center gap-1 cursor-pointer">
           {[1, 2, 3].map((i) => (

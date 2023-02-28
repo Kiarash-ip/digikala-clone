@@ -73,38 +73,36 @@ export default function DigikalaSuggestionsSection() {
   }, []);
 
   return (
-    <div className="w-full px-5 lg:px-4 pb-3 lg:pb-0 mt-4 lg:mt-6">
-      <div className="w-full max-w-[1336px] mx-auto">
-        <div className="flex items-center justify-center py-3 lg:py-4">
-          <h2 className="text-2xl text-neutral-900 font-[500] leading-10">
-            پیشنهاد دیجی‌کالا
-          </h2>
-        </div>
-        <div
-          className="border border-neutral-200 rounded-2xl mt-2"
-          ref={swiperContainerRef}
+    <div className="rounded-2xl relative px-5 lg:px-0 pb-3 lg:pb-0 mt-4 lg:mt-6">
+      <div className="text-center py-3 lg:py-4">
+        <h2 className="text-xl text-neutral-900 font-[500] leading-[2.1]">
+          پیشنهاد دیجی‌کالا
+        </h2>
+      </div>
+      <div
+        className="border border-neutral-200 rounded-2xl mt-2"
+        ref={swiperContainerRef}
+      >
+        <Swiper
+          spaceBetween={0}
+          dir="rtl"
+          slidesPerView={slides}
+          onSwiper={(swiper) => {
+            setSwiper(swiper);
+          }}
+          className="w-full grid-swiper-container"
         >
-          <Swiper
-            spaceBetween={0}
-            dir="rtl"
-            slidesPerView={slides}
-            onSwiper={(swiper) => {
-              setSwiper(swiper);
-            }}
-            className="w-full grid-swiper-container"
-          >
-            {gridItems.map((item) => {
-              return (
-                <SwiperSlide key={item[0].id}>
-                  <div className="flex flex-col grid-col divide-y divide-neutral-200">
-                    <GridItem src={item[0].src} title={item[0].title} />
-                    <GridItem src={item[1]?.src} title={item[1]?.title} />
-                  </div>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
-        </div>
+          {gridItems.map((item) => {
+            return (
+              <SwiperSlide key={item[0].id}>
+                <div className="flex flex-col grid-col divide-y divide-neutral-200">
+                  <GridItem src={item[0].src} title={item[0].title} />
+                  <GridItem src={item[1]?.src} title={item[1]?.title} />
+                </div>
+              </SwiperSlide>
+            );
+          })}
+        </Swiper>
       </div>
     </div>
   );

@@ -19,14 +19,18 @@ export default function MainPage() {
     <div>
       <Navbar />
       <ImageSliderSection />
-      <ServicesSection />
-      <SuggestionSection />
-      <MarketSuggestions />
-      <DiscountImageSection />
-      <DigikalaCategoriesSection />
-      <DiscountImageSection_2 />
-      <DigikalaSuggestionsSection />
-      <PopularBrandSection />
+      <div className="w-full max-w-[1336px] mx-auto lg:px-4 2xl:px-0">
+        <ServicesSection />
+        <SuggestionSection />
+        <MarketSuggestions />
+      </div>
+      <div className="w-full max-w-[1336px] mx-auto lg:px-4 2xl:px-0">
+        <DiscountImageSection />
+        <DigikalaCategoriesSection />
+        <DiscountImageSection_2 />
+        <DigikalaSuggestionsSection />
+        <PopularBrandSection />
+      </div>
       <FooterSection />
     </div>
   );

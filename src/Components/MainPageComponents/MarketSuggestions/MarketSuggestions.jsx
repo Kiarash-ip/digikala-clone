@@ -38,7 +38,7 @@ const marketItems = [
 
 export default function MarketSuggestions() {
   return (
-    <div className="w-full mt-2 lg:px-4 2xl:px-0">
+    <div className="mt-2 px-5 lg:px-0">
       <div className="w-full max-w-[1336px] mx-auto py-4 px-10 bg-neutral-100 rounded-2xl">
         <div
           className="w-full flex lg:items-center justify-betweenbg-fresh-pattern bg-no-repeat bg-left-center flex-col lg:flex-row"

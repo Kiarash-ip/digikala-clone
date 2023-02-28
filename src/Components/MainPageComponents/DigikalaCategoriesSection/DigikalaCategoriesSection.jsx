@@ -61,16 +61,14 @@ const digiKalaCategories = [
 
 export default function DigikalaCategoriesSection() {
   return (
-    <div className="w-full lg:mt-6 mt-4">
-      <div className="w-full max-w-[1336px] mx-auto px-5 lg:px-4 py-3 lg:pt-4 lg:pb-10 flex flex-col items-center">
-        <div className="mb-6 lg:mb-9">
-          <h3 className="text-2xl font-[500]">دسته‌بندی‌های دیجی‌کالا</h3>
-        </div>
-        <div className="flex flex-wrap gap-5 gap-y-6 lg:gap-0  lg:gap-y-8 justify-center items-start">
-          {digiKalaCategories.map((cat) => {
-            return <CategoryItem src={cat.src} title={cat.title} />;
-          })}
-        </div>
+    <div className="w-full px-5 lg:px-4 py-3 lg:pt-4 lg:pb-10 flex flex-col items-center mt-4 lg:mt-6">
+      <div className="mb-6 lg:mb-9 items-center">
+        <h3 className="text-2xl font-[500]">دسته‌بندی‌های دیجی‌کالا</h3>
+      </div>
+      <div className="w-full flex items-start justify-center flex-wrap gap-5 gap-y-6 lg:gap-0 lg:gap-y-8">
+        {digiKalaCategories.map((cat) => {
+          return <CategoryItem src={cat.src} title={cat.title} />;
+        })}
       </div>
     </div>
   );
